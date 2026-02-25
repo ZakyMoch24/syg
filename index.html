@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ucapan ulang tahun spesial, galeri kenangan, dan kejutan untuk orang tersayang.">
+    <title>Happy Birthday Sayang 💗</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <main class="container fade-in" role="main">
+        <header style="margin-top:38px;">
+            <h1 class="title typewriter" tabindex="0">🎀 Selamat Ulang Tahun, Sayang! 🎀</h1>
+            <p class="subtitle">Aku punya sesuatu spesial buat kamu 💓</p>
+            <nav aria-label="Menu utama" style="position:relative;">
+                <button id="hamburger" aria-label="Buka menu" style="background:none;border:none;cursor:pointer;display:none;position:fixed;top:22px;right:22px;z-index:1201;padding:0;">
+                    <span style="display:block;width:32px;height:5px;background:#d63384;margin:7px 0;border-radius:2px;"></span>
+                    <span style="display:block;width:32px;height:5px;background:#d63384;margin:7px 0;border-radius:2px;"></span>
+                    <span style="display:block;width:32px;height:5px;background:#d63384;margin:7px 0;border-radius:2px;"></span>
+                </button>
+                <div id="menuOverlay" style="display:none;"></div>
+                <aside class="slide-menu" id="slideMenu">
+                    <button id="closeMenu" aria-label="Tutup menu" style="background:none;border:none;position:absolute;top:18px;right:18px;font-size:2em;color:#d63384;cursor:pointer;z-index:1202;">&times;</button>
+                    <a href="message.html" class="menu-btn pink" role="button" tabindex="0" aria-label="Ucapan Spesial">💌 Ucapan Spesial</a>
+                    <a href="gallery.html" class="menu-btn pink" role="button" tabindex="0" aria-label="Gallery Kenangan">📸 Gallery Kenangan</a>
+                    <a href="reasons.html" class="menu-btn pink" role="button" tabindex="0" aria-label="Alasan Aku Sayang Kamu">💗 </a>
+                    <a href="surprise.html" class="menu-btn pink" role="button" tabindex="0" aria-label="Surprise Khusus">🎁 Surprise </a>
+                </aside>
+            </nav>
+        </header>
+        <section style="margin-top:32px;">
+            <div class="card" style="max-width:500px;margin:auto;">
+                <p style="font-size:1.15em;">
+                    Hari ini adalah hari spesial untukmu, dan aku ingin membuatmu tersenyum dengan kejutan kecil ini.<br>
+                    Semoga setiap halaman di web ini bisa membuatmu merasa dicintai dan dihargai.<br>
+                    Selamat ulang tahun, semoga semua harapanmu tercapai! 💖<br>
+                    <span style="font-size:1.3em;">— Kyy</span>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer style="text-align:center; margin-top:30px; color:#d63384; font-size:14px;">
+        &copy; 2025 Untukmu yang spesial 💗
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    // Hamburger slide menu logic
+    const hamburger = document.getElementById('hamburger');
+    const slideMenu = document.getElementById('slideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenu = document.getElementById('closeMenu');
+    function checkMobileMenu() {
+        if (window.innerWidth <= 600) {
+            hamburger.style.display = 'block';
+        } else {
+            hamburger.style.display = 'none';
+            slideMenu.style.transform = '';
+            menuOverlay.style.display = 'none';
+        }
+    }
+    checkMobileMenu();
+    window.addEventListener('resize', checkMobileMenu);
+    hamburger.addEventListener('click', function() {
+        slideMenu.classList.add('open');
+        menuOverlay.style.display = 'block';
+    });
+    closeMenu.addEventListener('click', function() {
+        slideMenu.classList.remove('open');
+        menuOverlay.style.display = 'none';
+    });
+    menuOverlay.addEventListener('click', function() {
+        slideMenu.classList.remove('open');
+        menuOverlay.style.display = 'none';
+    });
+    </script>
+</body>
+</html>
